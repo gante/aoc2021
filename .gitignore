@@ -2,3 +2,4 @@
 *.egg-info/
 # generated while running commands
 __pycache__/
+.pytest_cache

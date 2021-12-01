@@ -20,7 +20,7 @@ def count_increases(depth_list, window_size):
     return np.sum(np.where(diff > 0, 1, 0))
 
 
-def main():
+def get_solution():
     """ Solution to the problem """
     depth_list = []
     with open(os.path.join(DATA_PATH, "day_01.txt")) as input_file:
@@ -28,12 +28,12 @@ def main():
             line.strip()
             depth_list.append(int(line))
 
-    result = count_increases(depth_list=np.asarray(depth_list), window_size=1)
-    print(f"Solution to part 1: {result}")
-
-    result = count_increases(depth_list=np.asarray(depth_list), window_size=3)
-    print(f"Solution to part 2: {result}")
+    problem_1 = count_increases(depth_list=np.asarray(depth_list), window_size=1)
+    problem_2 = count_increases(depth_list=np.asarray(depth_list), window_size=3)
+    return problem_1, problem_2
 
 
 if __name__ == "__main__":
-    main()
+    result_1, result_2 = get_solution()
+    print(f"Solution to part 1: {result_1}")
+    print(f"Solution to part 2: {result_2}")
