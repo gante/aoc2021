@@ -1,0 +1,4 @@
+# install
+*.egg-info/
+# generated while running commands
+__pycache__/
