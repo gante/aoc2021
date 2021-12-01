@@ -12,5 +12,5 @@ Please create a new virtual environment with Python 3.7. For specific package re
 
 ## Structure
 
-The input data is available in the `data` folder, as `data_DD_P`, where `DD` is the day of the problem and `P` is the index of the problem (`1` or `2`).
-The scripts to run the data are available in the `bin` folder.
+The input data is available in the `data` folder, as `data_DD.txt`, where `DD` is the day of the problem.
+The scripts to compute the answer to the challenges are available in the `bin` folder.
