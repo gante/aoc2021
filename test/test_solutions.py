@@ -18,6 +18,7 @@ SOLUTIONS_DIR = os.path.join(
 )
 SOLUTIONS = {
     1: (1466, 1491),
+    2: (1882980, 1971232560),
 }
 
 
