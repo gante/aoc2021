@@ -24,7 +24,10 @@ def parse_fish_timer(input_data: List[int]) -> Dict[int, int]:
 
 
 def advance_days(input_fish_timer: Dict[int, int], days: int) -> Dict[int, int]:
-    """  """
+    """
+    Applies the problem logic for the number of specified days (new fish when timer goes below 0,
+    where the new fish requires 8 days to reproduce and the old fish just 6)
+    """
     fish_timer = input_fish_timer.copy() # no side-effects
     for _ in range(days):
         start_fish_timer = fish_timer
