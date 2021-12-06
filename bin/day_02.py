@@ -1,7 +1,7 @@
 """ Solution to day 02
 
 Lessons from the problem:
-- (original solution takes ~12ms, not worth trying to optimise)
+- (original solution takes ~1.2ms, not worth trying to optimise)
 """
 
 import os

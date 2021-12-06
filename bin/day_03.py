@@ -1,8 +1,8 @@
 """ Solution to day 03
 
 Lessons from the problem:
-- Casting to int on a bit per bit basis (`[int(bit) for bit in line]`) is expensive (~30ms). List
-comprehensions are still prefered over `map` for the core devs.
+- Casting to int on a bit per bit basis (`[int(bit) for bit in line]`) is expensive (~3ms) relative
+to the rest of the code. List comprehensions are still prefered over `map` for the core devs.
 (https://stackoverflow.com/questions/1247486/list-comprehension-vs-map#comment1074551_1247490)
 """
 

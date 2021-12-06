@@ -1,8 +1,8 @@
 """ Solution to day 04
 
 Lessons from the problem:
-- Having an auxiliary set to check whether a value is in a list shaved of ~10 ms (out of the
-original ~100ms)
+- Having an auxiliary set to check whether a value is in a list shaved of ~1 ms (out of the
+original ~10ms)
 """
 
 import os
