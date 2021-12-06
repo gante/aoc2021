@@ -1,21 +1,28 @@
 """ Solution to day 03
 
 Lessons from the problem:
--
+- Casting to int on a bit per bit basis (`[int(bit) for bit in line]`) is expensive (~30ms). List
+comprehensions are still prefered over `map` for the core devs.
+(https://stackoverflow.com/questions/1247486/list-comprehension-vs-map#comment1074551_1247490)
 """
 
 import os
+from typing import Tuple
+
 import numpy as np
+import numpy.typing as npt
+
+from aoc2021.utils import measure_time, print_results
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data")
 
 
-def binary_to_numeric(binary_number):
+def binary_to_numeric(binary_number: npt.NDArray) -> int:
     """ Returns the numeric (base 10) correspondent of a binary number """
     return int(sum([2**(idx) for idx, bit in enumerate(binary_number[::-1]) if bit > 0.]))
 
 
-def get_gamma_epsilon(binary_array):
+def get_gamma_epsilon(binary_array: npt.NDArray) -> Tuple[int, int]:
     """ Given the binary array, gets gamma and epsilon (in a numerical format) """
     averages = np.mean(binary_array, axis=0)
     gamma_binary = np.round(averages)
@@ -25,7 +32,7 @@ def get_gamma_epsilon(binary_array):
     return gamma, epsilon
 
 
-def get_oxigen_co2(binary_array):
+def get_oxigen_co2(binary_array: npt.NDArray) -> Tuple[int, int]:
     """
     Given the binary array, gets the oxigen generator and CO2 scrubber ratings (in a numerical
     format)
@@ -51,6 +58,7 @@ def get_oxigen_co2(binary_array):
     return oxigen, co2
 
 
+@measure_time
 def get_solution():
     """ Solution to the problem """
     binary_list = []
@@ -68,6 +76,5 @@ def get_solution():
 
 
 if __name__ == "__main__":
-    result_1, result_2 = get_solution()
-    print(f"Solution to part 1: {result_1}")
-    print(f"Solution to part 2: {result_2}")
+    problem_1, problem_2, duration = get_solution()
+    print_results(problem_1, problem_2, duration)

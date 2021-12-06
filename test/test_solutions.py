@@ -5,7 +5,6 @@ Possibly not the best testing structure, but gets the job done for now.
 """
 
 import os
-import time
 from datetime import timedelta
 import importlib
 import pytest
@@ -46,11 +45,9 @@ def test_results(problem_idx):
         module_termination = str(problem_idx)
     module_name = "bin.day_" + module_termination
     module = importlib.import_module(module_name)
-    start = time.time()
-    result = module.get_solution()
-    end = time.time()
+    result_0, result_1, duration = module.get_solution()
+    result = (result_0, result_1)
     assert result == SOLUTIONS[problem_idx], \
         "The result ({}) did not match the solution ({})!".format(result, SOLUTIONS[problem_idx])
-    duration = timedelta(seconds=end-start)
     assert duration < timedelta(seconds=1), \
         "It took more than expected to run! (duration = {})".format(duration)

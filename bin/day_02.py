@@ -1,15 +1,18 @@
 """ Solution to day 02
 
 Lessons from the problem:
--
+- (original solution takes ~12ms, not worth trying to optimise)
 """
 
 import os
+from typing import List, Tuple
+
+from aoc2021.utils import measure_time, print_results
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data")
 
 
-def get_final_position(direction_list, values_list):
+def get_final_position(direction_list: List[str], values_list: List[int]) -> Tuple[int, int, int]:
     """
     Given the list of movements, returns a tuple with the final horizontal position and depth
     """
@@ -29,7 +32,8 @@ def get_final_position(direction_list, values_list):
     return horizontal, depth, aim
 
 
-def get_solution():
+@measure_time
+def get_solution() -> Tuple[int, int]:
     """ Solution to the problem """
     values_list = []
     direction_list = []
@@ -47,6 +51,5 @@ def get_solution():
 
 
 if __name__ == "__main__":
-    result_1, result_2 = get_solution()
-    print(f"Solution to part 1: {result_1}")
-    print(f"Solution to part 2: {result_2}")
+    problem_1, problem_2, duration = get_solution()
+    print_results(problem_1, problem_2, duration)
