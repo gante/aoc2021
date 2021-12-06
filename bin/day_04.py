@@ -45,7 +45,9 @@ def find_desired_board(
 
         if len(win_order)-1 >= win_idx:
             board_idx = win_order[win_idx]
-            return boards[board_idx, ...], board_state[board_idx, ...], number
+            break
+
+    return boards[board_idx, ...], board_state[board_idx, ...], number
 
 
 @measure_time

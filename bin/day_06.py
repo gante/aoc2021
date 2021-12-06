@@ -12,7 +12,7 @@ from aoc2021.utils import measure_time, print_results
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data")
 
 
-def parse_fish_timer(input_data: List[int]) -> Dict[int, int]:
+def parse_fish_timer(input_data: List[str]) -> Dict[int, int]:
     """
     Converts the input into a dict, where the key is the number of days until the fish reproduces,
     and the value is the number of fishes in that state
