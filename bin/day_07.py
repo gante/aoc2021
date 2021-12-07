@@ -1,7 +1,7 @@
 """ Solution to day 07
 
 Lessons from the problem:
--
+- knowing maths helps simplifying problems!
 """
 
 import os
@@ -30,7 +30,10 @@ def min_fuel_to_align_1(crab_positions: npt.NDArray) -> int:
 def min_fuel_to_align_2(crab_positions: npt.NDArray) -> int:
     """ Finds and returns the minimum fuel required to align the crabs (increasing fuel cost)
 
-    Q: why does `np.floor(np.mean(crab_positions))` gives us the optimal position here?
+    Oversimplified explanation:
+    This problem we want the argmin for f(x) = L2 + L1. Because our numbers are >> 1, the function
+    is dominated by L2, and the argmin for a L2 distance is the mean. Therefore, the optimal
+    position is one of the integers around that value.
     """
 
     def compute_fuel(x: int) -> int:
@@ -38,8 +41,9 @@ def min_fuel_to_align_2(crab_positions: npt.NDArray) -> int:
         fuels = (distance * (distance + 1)) / 2
         return int(np.sum(fuels))
 
-    opt_position = np.floor(np.mean(crab_positions))
-    return compute_fuel(opt_position)
+
+    opt_positions = [np.floor(np.mean(crab_positions)), np.ceil(np.mean(crab_positions))]
+    return np.min([compute_fuel(value) for value in opt_positions])
 
 
 @measure_time
