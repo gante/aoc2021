@@ -1,7 +1,7 @@
 """ Solution to day 10
 
 Lessons from the problem:
--
+- Asserts help you confirm assumptions and avoid silly mistakes :)
 """
 
 import os
