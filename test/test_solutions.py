@@ -29,6 +29,7 @@ SOLUTIONS = {
     10: (243939, 2421222841),
     11: (1713, 502),
     12: (3679, 107395),
+    13: (602, 0), # problem 2 here is a print in the terminal
 }
 
 
