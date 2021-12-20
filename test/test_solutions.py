@@ -10,6 +10,7 @@ import importlib
 import pytest
 
 
+MAX_TIME = 5 #seconds
 SOLUTIONS_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     '..',
@@ -27,6 +28,7 @@ SOLUTIONS = {
     9: (512, 1600104),
     10: (243939, 2421222841),
     11: (1713, 502),
+    12: (3679, 107395),
 }
 
 
@@ -56,5 +58,5 @@ def test_results(problem_idx):
     result = (result_0, result_1)
     assert result == SOLUTIONS[problem_idx], \
         "The result ({}) did not match the solution ({})!".format(result, SOLUTIONS[problem_idx])
-    assert duration < timedelta(seconds=1), \
+    assert duration < timedelta(seconds=MAX_TIME), \
         "It took more than expected to run! (duration = {})".format(duration)
