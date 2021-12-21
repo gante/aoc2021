@@ -32,6 +32,7 @@ SOLUTIONS = {
     13: (602, 0), # problem 2 here is a print in the terminal
     14: (4244, 4807056953866),
     15: (755, 3016),
+    16: (984, 1015320896946),
 }
 
 

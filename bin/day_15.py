@@ -1,7 +1,7 @@
 """ Solution to day 15
 
 Lessons from the problem:
--
+- A* is faster than dijkstra for these kind of problems
 """
 
 import os

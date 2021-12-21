@@ -1,11 +1,11 @@
 """ Solution to day 13
 
 Lessons from the problem:
--
+- padding is important in discrete divisions
 """
 
 import os
-from typing import Any, List, Tuple
+from typing import List, Tuple
 
 import numpy as np
 import numpy.typing as npt

@@ -1,7 +1,7 @@
 """ Solution to day 14
 
 Lessons from the problem:
--
+- When order is not needed, consider things as sets (or similar)
 """
 
 import os
